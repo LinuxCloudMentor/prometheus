@@ -24,6 +24,7 @@ def uninstall_prometheus():
     subprocess.run(['firewall-cmd', '--remove-port', '9090/tcp', '--permanent'])
     subprocess.run(['firewall-cmd', '--reload'])
 
+    subprocess.run(['rm', '-rf', '/var/mail/prometheus'])
 
 
     print("Prometheus uninstallation completed successfully.")
